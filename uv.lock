@@ -1,0 +1,23 @@
+version = 1
+revision = 2
+requires-python = ">=3.13"
+
+[[package]]
+name = "demomodbus"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "pymodbus" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pymodbus", specifier = ">=3.11.2" }]
+
+[[package]]
+name = "pymodbus"
+version = "3.11.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d1/28/34f667085cb162ac68be849e4ea1ced4c54d97b7d8099c11b27ec1cf2fa1/pymodbus-3.11.2.tar.gz", hash = "sha256:132712baf79cae339aac694739b14551bab69b2a078570cb1350b1db0cccdba7", size = 162372, upload-time = "2025-09-10T10:02:53.089Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/36/90/bc7d13710d45ffce70452e5c2e43f7b4d5b23d7424271268d1b363ac5461/pymodbus-3.11.2-py3-none-any.whl", hash = "sha256:0b446173059a881dae46753cebaab3ad72b39f7e3417a60ead394d09d0f6c8fe", size = 164237, upload-time = "2025-09-10T10:02:50.93Z" },
+]
