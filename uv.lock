@@ -13,6 +13,9 @@ dependencies = [
 [package.metadata]
 requires-dist = [{ name = "pymodbus", specifier = ">=3.11.2" }]
 
+[package.metadata.requires-dev]
+dev = []
+
 [[package]]
 name = "pymodbus"
 version = "3.11.2"

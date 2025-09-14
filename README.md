@@ -1,6 +1,6 @@
-# ModBus TCP Server et Client en Python
+# ModBus TCP Serveur et Client en Python
 
-Ce projet démontre l'implémentation d'un serveur et d'un client ModBus TCP utilisant la bibliothèque pymodbus en Python avec les outils modernes de développement.
+Ce projet utilise Python et la bibliothèque pymodbus pour créer un serveur et un client ModBus TCP avec des outils de développement modernes.
 
 ## 🛠️ Environnement de Développement
 

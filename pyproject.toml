@@ -1,9 +1,12 @@
 [project]
 name = "demomodbus"
 version = "0.1.0"
-description = "Add your description here"
+description = "ModBus TCP server and client with Python and pymodbus package"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pymodbus>=3.11.2",
 ]
+
+[dependency-groups]
+dev = []
