@@ -54,7 +54,7 @@ Remarques :
 ### 1. Récupérer le dépôt
 
 ```bash
-git clone https://github.com/Kryll13/demomodbus.git
+git clone https://github.com/kryll13/demomodbus.git
 cd demomodbus
 ```
 
