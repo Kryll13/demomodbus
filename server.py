@@ -1,16 +1,23 @@
-from pymodbus.server import StartTcpServer
-from pymodbus.datastore import ModbusSequentialDataBlock, ModbusDeviceContext, ModbusServerContext
+"""Serveur Modbus TCP minimal.
 
-# Initialisation des données (coils, holding registers, etc.)
-store = ModbusDeviceContext(
-    di=ModbusSequentialDataBlock(0, [0]*100),    # Discrete Inputs
-    co=ModbusSequentialDataBlock(0, [0]*100),    # Coils
-    hr=ModbusSequentialDataBlock(0, [13]*100),   # Holding Registers
-    ir=ModbusSequentialDataBlock(0, [0]*100)     # Input Registers
+Carte mémoire (CO : Coils, DI : Discrete Inputs, HR : Holding Registers, IR : Input Registers) :
+    CO 0-99   : sortie booléenne
+    DI 0-99   : entrée booléenne
+    HR 0-99   : registre de maintien (valeur initiale 13)
+    IR 0-99   : registre d'entrée
+"""
+
+from pymodbus.server import StartTcpServer
+from pymodbus.simulator import DataType, SimData, SimDevice
+
+store = SimDevice(
+    id=1,
+    simdata=(
+        [SimData(0, count=100, values=False, datatype=DataType.BITS)],
+        [SimData(0, count=100, values=False, datatype=DataType.BITS)],
+        [SimData(0, count=100, values=13, datatype=DataType.REGISTERS)],
+        [SimData(0, count=100, values=0, datatype=DataType.REGISTERS)],
+    ),
 )
 
-# Contexte du serveur (1 slave par défaut, unit_id=1)
-context = ModbusServerContext(devices = store, single=True)
-
-# Démarrer le serveur sur le port 5020
-StartTcpServer(context=context, address=("0.0.0.0", 502))
+StartTcpServer(context=store, address=("0.0.0.0", 502))

@@ -3,9 +3,9 @@ name = "demomodbus"
 version = "0.1.0"
 description = "ModBus TCP server and client with Python and pymodbus package"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"
 dependencies = [
-    "pymodbus>=3.11.2",
+    "pymodbus>=3.15,<3.16",
 ]
 
 [dependency-groups]
